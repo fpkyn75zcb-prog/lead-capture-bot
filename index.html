@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lead Capture Bot — Fogle Unlimited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background grid -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <div class="page-wrap">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="logo">
+        <span class="logo-mark">◆</span>
+        <span class="logo-text">Fogle Unlimited</span>
+      </div>
+      <div class="header-tag">Lead Intelligence System v1.0</div>
+    </header>
+
+    <!-- Main Card -->
+    <main class="card-shell">
+
+      <div class="card-eyebrow">
+        <span class="pulse-dot"></span>
+        LIVE CAPTURE ACTIVE
+      </div>
+
+      <h1 class="card-title">Let's Connect.</h1>
+      <p class="card-subtitle">Drop your info below and we'll be in touch. Every lead goes directly into our pipeline.</p>
+
+      <!-- Chat bubble intro -->
+      <div class="chat-bubble" id="chatBubble">
+        <div class="chat-avatar">🤖</div>
+        <div class="chat-text">Hey there! Fill out the form and I'll make sure your info lands in the right hands — instantly.</div>
+      </div>
+
+      <!-- Form -->
+      <form id="leadForm" novalidate>
+
+        <div class="field-row two-col">
+          <div class="field-group">
+            <label for="name">Full Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+            <span class="field-error" id="nameErr"></span>
+          </div>
+          <div class="field-group">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" autocomplete="email" required />
+            <span class="field-error" id="emailErr"></span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="phone">Phone <span class="optional">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" />
+        </div>
+
+        <div class="field-group">
+          <label for="message">Message <span class="optional">(optional)</span></label>
+          <textarea id="message" name="message" placeholder="Tell us what you're looking for..." rows="4"></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn">
+          <span class="btn-text">Send to Pipeline</span>
+          <span class="btn-icon">→</span>
+          <span class="btn-loader" aria-hidden="true"></span>
+        </button>
+
+      </form>
+
+      <!-- Success / Error States -->
+      <div class="response-panel" id="responsePanel" aria-live="polite"></div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      © 2025 Fogle Unlimited · Lead Capture Bot v1.0 · All leads saved to Google Sheets
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
