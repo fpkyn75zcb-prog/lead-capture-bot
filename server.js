@@ -1,4 +1,4 @@
-/**
+/**const config = require("./config.js");
  * Lead Capture Bot — Server
  * © 2025 By Fogle Unlimited
  * Version: v1.0
@@ -111,7 +111,10 @@ app.post("/submit-lead", async (req, res) => {
     res.status(500).json({ success: false, error: "Failed to save lead. Please try again." });
   }
 });
-
+// ─── Route: Config ────────────────────────────────────────────────────────────
+app.get("/config", (req, res) => {
+  res.json(config);
+});
 // ─── Route: Health Check ───────────────────────────────────────────────────────
 app.get("/health", (req, res) => {
   res.json({ status: "ok", version: "1.0", timestamp: new Date().toISOString() });

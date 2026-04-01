@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lead Capture Bot — Fogle Unlimited</title>
+<script>
+  fetch('/config').then(r=>r.json()).then(c=>{
+    document.title = 'Lead Capture — ' + c.businessName;
+    document.getElementById('bizName').textContent = c.businessName;
+    document.getElementById('tagline').textContent = c.tagline;
+    document.getElementById('subtext').textContent = c.subtext;
+    document.getElementById('submitBtn').querySelector('.btn-text').textContent = c.buttonText;
+    document.documentElement.style.setProperty('--accent', c.primaryColor);
+  });
+</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
@@ -21,7 +31,7 @@
     <header class="site-header">
       <div class="logo">
         <span class="logo-mark">◆</span>
-        <span class="logo-text">Fogle Unlimited</span>
+        <span class="logo-text" id="bizName">Fogle Unlimited</span>
       </div>
       <div class="header-tag">Lead Intelligence System v1.0</div>
     </header>
@@ -34,8 +44,8 @@
         LIVE CAPTURE ACTIVE
       </div>
 
-      <h1 class="card-title">Let's Connect.</h1>
-      <p class="card-subtitle">Drop your info below and we'll be in touch. Every lead goes directly into our pipeline.</p>
+      <h1 class="card-title" id="tagline">Let's Connect.</h1>
+      <p class="card-subtitle" id="subtext">Drop your info below and we'll be in touch. Every lead goes directly into our pipeline.</p>
 
       <!-- Chat bubble intro -->
       <div class="chat-bubble" id="chatBubble">
